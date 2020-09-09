@@ -1,0 +1,134 @@
+body {
+  position: relative;
+  background-color: #fff;
+}
+
+small {color: #999999;}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Jumbotron buttons */
+  .jumbotron .btn {
+    margin-bottom: 10px;
+  }
+
+  /* Subnav */
+  .subnav {
+    position: static;
+    top: auto;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    background: #fff; /* whole background property since we use a background-image for gradient */
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+  .subnav .nav > li {
+    float: none;
+  }
+  .subnav .nav > li > a {
+    border: 0;
+  }
+  .subnav .nav > li + li > a {
+    border-top: 1px solid #e5e5e5;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+      -webkit-border-radius: 4px 4px 0 0;
+         -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0;
+  }
+
+  /* Popovers */
+  .large-bird {
+    display: none;
+  }
+  .popover-well .popover-wrapper {
+    margin-left: 0;
+  }
+
+  /* Space out the show-grid examples */
+  .show-grid [class*="span"] {
+    margin-bottom: 5px;
+  }
+
+  /* Unfloat the back to top link in footer */
+  .footer .pull-right {
+    float: none;
+  }
+  .footer p {
+    margin-bottom: 9px;
+  }
+}
+
+label.control-label abbr {
+    color:red;
+    font-weight:bold;
+    font-size: 18px;
+    padding-left: 3px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.readonly_string div.input, .month div.input {
+    padding:5px 0 4px;
+}
+
+form.button_to {
+    margin: 0;
+}
+
+.breadcrumb {
+  margin: 0 0 12px 0;
+}
+
+.form-horizontal fieldset {
+  margin-top: 8px;
+}
+
+.form-horizontal legend {
+  margin-bottom: 0px;
+}
+
+.form-horizontal div.control-group {
+  margin-bottom: 10px;
+}
+
+.form-horizontal legend + div.control-group.readonly_string {
+  margin-top: 2px;
+}
+
+.form-horizontal div.control-group.readonly_string {
+  /*margin-bottom: 0px;*/
+}
+
+.form-actions .btn-large {
+  margin-right: 14px;
+}
+
+.btn-inline {
+  margin-left: 14px;
+}
+
+.no-error {
+  border-color: #CCCCCC #CCCCCC #B3B3B3 !important;
+  color: #333333 !important;
+}
+
+.table tfoot td { 
+font-weight: 700;
+}

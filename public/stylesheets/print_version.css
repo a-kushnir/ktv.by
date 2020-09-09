@@ -1,0 +1,69 @@
+/* Useful classes */
+
+.align-left { text-align:left !important; }
+.align-center { text-align:center !important; }
+.align-right { text-align:right !important; }
+.align-justify { text-align:justify !important; }
+.align-top { vertical-align:top !important; }
+.align-middle { vertical-align:middle !important; }
+.align-bottom { vertical-align:bottom !important; }
+
+/* Bootstrap */
+
+.table {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  font-weight: bold;
+}
+.table thead th {
+  vertical-align: bottom;
+}
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+
+.table-bordered {
+  border-collapse:collapse;
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border: 1px dotted #000;
+  background: #FFFFFF;
+}
+
+
+/* House */
+.not-subscriber {
+  color: #CCC;
+}
+
+.good-subscriber a {
+  color: #000;
+}
+
+.evil-subscriber a {
+  color: #000;
+  border: 2px dashed #000;
+}
+
+.good-subscriber a,
+.evil-subscriber a {
+  text-decoration: none;
+}
+
+.good-subscriber a:hover,
+.evil-subscriber a:hover{
+  text-decoration: underline;
+}

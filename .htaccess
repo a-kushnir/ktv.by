@@ -1,0 +1,67 @@
+Options +FollowSymLinks
+Options -Indexes
+
+DirectoryIndex /app/controllers/index.php
+
+RewriteEngine on
+
+# PUBLIC
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+RewriteRule $ /public%{REQUEST_URI} [L]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule $ /public%{REQUEST_URI} [L]
+
+# GET CTRL/INDEX
+RewriteCond %{THE_REQUEST} ^GET [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{DOCUMENT_ROOT}/app/controllers%{REQUEST_URI}.php -f
+RewriteRule $ /app/controllers%{REQUEST_URI}.php?action=index [L,QSA]
+
+# GET CTRL/NEW
+RewriteCond %{THE_REQUEST} ^GET [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/new$ /app/controllers/$1.php?action=new [L,QSA]
+
+# POST CTRL/CREATE
+RewriteCond %{THE_REQUEST} ^POST [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteCond %{DOCUMENT_ROOT}/app/controllers%{REQUEST_URI}.php -f
+RewriteRule $ /app/controllers%{REQUEST_URI}.php?action=create [L,QSA]
+
+# GET CTRL/SHOW
+RewriteCond %{THE_REQUEST} ^GET [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/(\d+)$ /app/controllers/$1.php?action=show&id=$2 [L,QSA]
+
+# GET CTRL/EDIT
+RewriteCond %{THE_REQUEST} ^GET [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/(\d+)/edit$ /app/controllers/$1.php?action=edit&id=$2 [L,QSA]
+
+# POST CTRL/UPDATE
+RewriteCond %{THE_REQUEST} ^POST [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/(\d+)$ /app/controllers/$1.php?action=update&id=$2 [L,QSA]
+
+# POST CTRL/DESTROY
+RewriteCond %{THE_REQUEST} ^POST [NC]
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/(\d+)$ /app/controllers/$1.php?action=destroy&id=$2 [L,QSA]
+
+# MEMBER CTRL/ACTION
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/(\d+)/([^/]+)$ /app/controllers/$1.php?action=$3&id=$2 [L,QSA]
+
+# COLLECTION CTRL/ACTION
+RewriteCond %{REQUEST_URI}  !^/public/.*$
+RewriteCond %{REQUEST_URI}  !^/app/controllers/.*$
+RewriteRule ^(.+)/([^/]+)$ /app/controllers/$1.php?action=$2 [L,QSA]
