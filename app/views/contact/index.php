@@ -27,7 +27,7 @@ Brest, Belarus, 224005<br>
 <h3>Public transport</h3>
 <p>
 <small>Bus:</small> routes 9, 20, 22, School stop<br>
-<small>Trolleybus:</small> route 37, Adamkovskaya stop<br>
+<small>Trolley:</small> route 37, Adamkovskaya stop<br>
 </p>
 </div>
 </div>
