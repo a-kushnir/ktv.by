@@ -571,6 +571,15 @@ function field_attributes($attributes) {
 ////////////////
 // FORMATTING //
 
+function mysql_escape($value) {
+  global $factory;
+  if ($factory->connection->available) {
+    return mysqli_real_escape_string($factory->connection->link, $value);
+  } else {
+    return $value;
+  }
+}
+
 function mysql_time_from_ts($value) {
   return str_replace('%', '', date(MYSQL_TIME, $value));
 }

@@ -8,7 +8,7 @@ class User extends BaseModel {
 
       $login = prepare_phone($login);
       
-      $query = "SELECT id FROM users WHERE login='".mysql_real_escape_string($login)."' and password=MD5('".mysql_real_escape_string($password)."')";
+      $query = "SELECT id FROM users WHERE login='".mysql_escape($login)."' and password=MD5('".mysql_escape($password)."')";
       $auth_user_id = $factory->connection->execute_scalar($query);
 
       if ($auth_user_id) {
@@ -18,13 +18,13 @@ class User extends BaseModel {
             CONCAT_WS(' ', s.first_name, s.middle_name) short_name,
             CONCAT_WS(' ', s.last_name, s.first_name, s.middle_name) full_name
           FROM users u JOIN subscribers s ON s.id = u.subscriber_id
-          WHERE u.id = '".mysql_real_escape_string($auth_user_id)."'"));
+          WHERE u.id = '".mysql_escape($auth_user_id)."'"));
         $user->attributes['user_session_id'] = $us_id;
         return $user;
         
       } else {
       
-        $query = "SELECT id FROM users WHERE login='".mysql_real_escape_string($login)."'";
+        $query = "SELECT id FROM users WHERE login='".mysql_escape($login)."'";
         $found_user_id = $factory->connection->execute_scalar($query);
         User::creare_session($login, 0, $found_user_id);
         return null;
@@ -36,7 +36,7 @@ class User extends BaseModel {
   {
     global $factory;
     
-    $query = "SELECT id FROM users WHERE id='".mysql_real_escape_string($id)."' and password=MD5('".mysql_real_escape_string($password)."')";
+    $query = "SELECT id FROM users WHERE id='".mysql_escape($id)."' and password=MD5('".mysql_escape($password)."')";
     return $factory->connection->execute_scalar($query);    
   }
 
@@ -44,7 +44,7 @@ class User extends BaseModel {
   {
     global $factory;
     
-    $query = "UPDATE users SET password = MD5('".mysql_real_escape_string($new_password)."') WHERE id='".mysql_real_escape_string($id)."'";
+    $query = "UPDATE users SET password = MD5('".mysql_escape($new_password)."') WHERE id='".mysql_escape($id)."'";
     $factory->connection->execute($query);        
   }*/
   

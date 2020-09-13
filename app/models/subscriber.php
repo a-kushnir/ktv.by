@@ -11,7 +11,7 @@ class Subscriber extends BaseModel {
       FROM subscribers s 
       LEFT JOIN billing_accounts ba ON ba.subscriber_id = s.id 
       LEFT JOIN billing_tariffs bt ON ba.billing_tariff_id = bt.id
-      WHERE s.id = '".mysql_real_escape_string($id)."'";
+      WHERE s.id = '".mysql_escape($id)."'";
     
     return new Subscriber($factory->connection->execute_row($query));
   }

@@ -1135,7 +1135,7 @@ form.bs-docs-example {
 
 #feedback { 
   height: 224px; 
-  width: 224px; 
+  width: 250px; 
   position: fixed; 
   top: 210px; 
   z-index: 999;

@@ -6,44 +6,16 @@ class DbConnection
   
   public function __construct()
   {
-    $this->available = true;
-  
-    if (USE_PCONNECT) {
-      $this->link = mysql_pconnect(DB_HOST, DB_USER, DB_PASSWORD);
-      // Fixes "server has gone away" error
-      if (!mysql_ping($this->link)) {
-        $this->link = mysql_pconnect(DB_HOST, DB_USER, DB_PASSWORD);
-      }
-    } else {
-      $this->link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-    }
-    
-    if (!$this->link)
-    {
-      if (DB_REQUIRED) {
-        echo "<p> В настоящий момент сервер базы данных не доступен, поэтому корректное отображение страницы невозможно.</p>";
-        exit;
-      } else {
-        $this->available = false;
-      }
-    }
-    if (!mysql_select_db(DB_DATABASE, $this->link))
-    {
-      if (DB_REQUIRED) {
-        echo "<p> В настоящий момент база данных не доступна, поэтому корректное отображение страницы невозможно.</p>";
-        exit;
-      } else {
-        $this->available = false;
-      }
-    }
+    $this->link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+	$this->available = !$this->link->connect_errno;
 
     // UTF-8
-    if ($this->available) {
-      mysql_query ("SET NAMES utf8");
-      mysql_query ("set character_set_client='utf8'");
-      mysql_query ("set character_set_results='utf8'");
-      mysql_query ("set collation_connection='utf8_general_ci'");
-    }
+	if ($this->available) {
+      $this->link->query("SET NAMES utf8");
+      $this->link->query("set character_set_client='utf8'");
+      $this->link->query("set character_set_results='utf8'");
+      $this->link->query("set collation_connection='utf8_general_ci'");
+	}
   }
   
   public function execute($sql)
@@ -53,7 +25,7 @@ class DbConnection
     //echo $sql.';</br>';
     global $mysql_time;
     $mysql_started_at = microtime(true);
-    $result = mysql_query($sql, $this->link);
+    $result = $this->link->query($sql);
     $mysql_time += microtime(true) - $mysql_started_at;
     if (!$result) {
       //$this->rollback();
@@ -86,10 +58,11 @@ class DbConnection
     if (!$this->available) return null;
     
     $result = $this->execute($sql);
-    if (mysql_num_rows($result)==0)
+    if (mysqli_num_rows($result) == 0) {
       return $default_value;
-    else
-      return mysql_result($result,0);
+    } else {
+      return $result->fetch_assoc();
+	}
   }
   
   public function execute_void($sql)

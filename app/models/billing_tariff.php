@@ -6,7 +6,7 @@ class BillingTariff extends BaseModel {
 	{
     global $factory;
     
-		$query = "SELECT * FROM billing_tariffs WHERE id = '".mysql_real_escape_string($id)."'";
+		$query = "SELECT * FROM billing_tariffs WHERE id = '".mysql_escape($id)."'";
     return new BillingTariff($factory->connection->execute_row($query));
 	}
 }

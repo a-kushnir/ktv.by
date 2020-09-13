@@ -12,7 +12,7 @@ class Factory
 
 	public function record_exists($table, $id)
 	{
-		$sql = "SELECT id FROM `".$table."` WHERE id = '".mysql_real_escape_string($id)."'";
+		$sql = "SELECT id FROM `".$table."` WHERE id = '".mysql_escape($id)."'";
     return $this->connection->execute_scalar($sql);
 	}
   
@@ -35,7 +35,7 @@ class Factory
 		foreach ($attributes as $column => $value) {
       //if ($column != 'id') {
         $columns[] = "`".$column."`";
-        $values[] =  is_null($value) ? "NULL" : "'".mysql_real_escape_string($value)."'";
+        $values[] =  is_null($value) ? "NULL" : "'".mysql_escape($value)."'";
       //}
 		}
 		
@@ -49,11 +49,11 @@ class Factory
 		$values = array();
 		foreach ($attributes as $column => $value) {
       if ($column != 'id') {
-        $values[] = "`".$column."`=".(is_null($value) ? "NULL" : "'".mysql_real_escape_string($value)."'");
+        $values[] = "`".$column."`=".(is_null($value) ? "NULL" : "'".mysql_escape($value)."'");
       }
 		}
 		
-		$sql = "UPDATE ".$table." SET ".join(", ", $values)." WHERE id='".mysql_real_escape_string($id)."'";
+		$sql = "UPDATE ".$table." SET ".join(", ", $values)." WHERE id='".mysql_escape($id)."'";
     if ($conditions) $sql .= " AND ".$conditions;
     
 		$this->connection->execute($sql);
@@ -71,7 +71,7 @@ class Factory
 	
 	public function destroy($table, $id)
 	{
-		$sql = "DELETE FROM ".$table." WHERE id='".mysql_real_escape_string($id)."'";
+		$sql = "DELETE FROM ".$table." WHERE id='".mysql_escape($id)."'";
 		$this->connection->execute($sql);
     return mysql_affected_rows();
 	}
