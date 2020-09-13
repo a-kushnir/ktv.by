@@ -5,6 +5,6 @@ include('../../lib/application.php');
 function action_index()
 {
   global $title, $subtitle;
-  $title = 'ТелеСпутник | Смотри в удовольствие!';
+  $title = 'TeleSputnik | Watch and enjoy!';
 }
 ?>

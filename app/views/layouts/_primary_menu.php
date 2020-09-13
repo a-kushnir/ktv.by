@@ -7,23 +7,20 @@ function render_primary_menu_item($link, $text) {
 
 <ul class="nav">
 <?php 
-  //echo render_primary_menu_item('/join', 'Подключиться');
-  echo render_primary_menu_item('/tariffs', 'Услуги и Тарифы');
-  echo render_primary_menu_item('/dvb-c', 'Настройка DVB-C');
-  echo render_primary_menu_item('/payments', 'Способы оплаты');
-  echo render_primary_menu_item('/about', 'О компании');
-  echo render_primary_menu_item('/contact', 'Контакты');
+  echo render_primary_menu_item('/tariffs', 'Our Services');
+  echo render_primary_menu_item('/dvb-c', 'DVB-C Setup');
+  echo render_primary_menu_item('/payments', 'Payment Methods');
+  echo render_primary_menu_item('/about', 'About');
+  echo render_primary_menu_item('/contact', 'Contact Us');
 ?>
-<li class="visible-phone"><a href="#feedback-popup" role="button" data-toggle="modal">Отправить сообщение</a></li>
+<li class="visible-phone"><a href="#feedback-popup" role="button" data-toggle="modal">Message Us</a></li>
 </ul>
 <ul class="nav pull-right">
 <?php if (isset($_SESSION['user_id'])) { 
   echo render_primary_menu_item('/home', $_SESSION['user_name']);
-  //echo render_primary_menu_item('/profile', $_SESSION['user_name']);
-  //echo render_primary_menu_item('/help', 'Помощь');
-  echo render_primary_menu_item('/logout', 'Выход');
+  echo render_primary_menu_item('/logout', 'Log Out');
 } else {
-  echo render_primary_menu_item('/logon', 'Личный кабинет');
+  echo render_primary_menu_item('/logon', 'My Account');
 } ?>
 </ul>
 

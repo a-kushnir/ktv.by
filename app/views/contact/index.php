@@ -1,4 +1,4 @@
-<a style="float:right;" href="#subscribe-popup" class="btn btn-info" role="button" data-toggle="modal">Хочу подключиться</a>
+<a style="float:right;" href="#subscribe-popup" class="btn btn-danger" role="button" data-toggle="modal">Try 30 days for free</a>
 
 <div class="page-header">
 <h1>Контактная информация</h1>
@@ -6,7 +6,7 @@
 
 <div class="row">
 <div class="span4 offset1">
-<h3>ООО «ТелеСпутник»</h3>
+<h3>TeleSputnik Ltd.</h3>
 <p>
 ул. Мичурина 52 <small>(с обратной стороны)</small><br>
 Брест, Беларусь, 224005<br>

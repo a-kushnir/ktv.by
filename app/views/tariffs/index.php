@@ -1,7 +1,7 @@
-<a style="float:right;" href="#subscribe-popup" class="btn btn-info" role="button" data-toggle="modal">Хочу подключиться</a>
+<a style="float:right;" href="#subscribe-popup" class="btn btn-danger" role="button" data-toggle="modal">Try 30 days for free</a>
 
 <div class="page-header">
-<h1>Услуги и Тарифы</h1>
+<h1>Our Services</h1>
 </div>
 
 <div class="span8 offset2">

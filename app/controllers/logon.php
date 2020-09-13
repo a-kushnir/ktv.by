@@ -5,7 +5,7 @@ include('../../lib/application.php');
 function action_index()
 {
   global $title, $subtitle;
-  $title = "Вход в личный кабинет";
+  $title = "My Account";
   $subtitle = null;
 
   global $factory;
@@ -22,7 +22,7 @@ function action_index()
 function action_create()
 {
   global $title, $subtitle;
-  $title = "Вход в личный кабинет";
+  $title = "My Account";
   $subtitle = null;
 
   $user = User::try_auth($_POST['login'], $_POST['password']);

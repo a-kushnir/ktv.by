@@ -113,7 +113,9 @@ footer address {
 }
 
 footer .contacts {margin-bottom: 5px;}
-footer .contact { margin: 0 8px; }
+footer .contact { color: #111111; margin: 0 8px; }
+footer .contact a { color: #111111; }
+footer .contact a:hover { color: #111111; }
 footer a { color: #808080; }
 footer a:hover { color: #808080; }
 /*-------------------------------------------------- 
@@ -1134,8 +1136,8 @@ form.bs-docs-example {
 }
 
 #feedback { 
-  height: 224px; 
-  width: 250px; 
+  height: 150px;
+  width: 145px;
   position: fixed; 
   top: 210px; 
   z-index: 999;

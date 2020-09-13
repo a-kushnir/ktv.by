@@ -5,7 +5,7 @@
   <title><?php echo $title.($subtitle ? ' ('.$subtitle.')' : '') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Кабельное телевидение в Бресте">
-  <meta name="author" content="ООО ТелеСпутник">
+  <meta name="author" content="TeleSputnik Ltd.">
   
   <!-- styles -->
   <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
@@ -40,7 +40,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/">ТелеСпутник</a>
+        <a class="brand" href="/">TeleSputnik</a>
         <div class="nav-collapse collapse">
           <?php include('_primary_menu.php'); ?>
         </div>
