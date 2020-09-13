@@ -7,7 +7,7 @@
     <footer>
       <div class="contacts align-center">
         <span class="contact">Phone: (123) 456-7890</span>
-        <span class="contact"><a href="mailto:info@ktv.by">Email: info@ktv.by</a></span>
+        <span class="contact"><a href="mailto:info@ktv.by">E-mail: info@ktv.by</a></span>
       </div>
       <div class="align-center">&copy; <a href="http://www.ktv.by/">TeleSputnik Ltd.</a>, 2011-<?php echo date('Y'); ?></div>
     </footer>

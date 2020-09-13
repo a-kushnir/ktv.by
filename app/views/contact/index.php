@@ -1,36 +1,33 @@
 <a style="float:right;" href="#subscribe-popup" class="btn btn-danger" role="button" data-toggle="modal">Try 30 days for free</a>
 
 <div class="page-header">
-<h1>Контактная информация</h1>
+<h1 style="margin-left: 150px;">Contact Us</h1>
 </div>
 
 <div class="row">
 <div class="span4 offset1">
 <h3>TeleSputnik Ltd.</h3>
 <p>
-ул. Мичурина 52 <small>(с обратной стороны)</small><br>
-Брест, Беларусь, 224005<br>
+Michurina str. 52 <small>(office entrance)</small><br>
+Brest, Belarus, 224005<br>
 </p>
 </div>
 
 <div class="span3">
-<h3>Контакты</h3>
+<h3>Contacts</h3>
 <p>
 <table>
-<tr><td><small>МТС:</small></td><td>8 (033) 363-65-65</td></tr>
-<tr><td><small>Life:</small></td><td>8 (025) 932-40-04</td></tr>
-<tr><td><small>Город:</small></td><td>8 (0162) 24-35-96</td></tr>
+<tr><td><small>Phone:</small></td><td>(123) 456-7890</td></tr>
 <tr><td><small>E-mail:</small></td><td><a href="mailto:info@ktv.by">info@ktv.by</a></td></tr>
 </table>
 </p>
 </div>
 
 <div class="span4">
-<h3>Как доехать</h3>
+<h3>Public transport</h3>
 <p>
-<small>Автобусом:</small> 9, 20, 22 до остановки «Школа»,<br>
-<small>Автобусом:</small> 37 до остановки «Адамковская»<br>
-<small>Маршрутным такси:</small> 1, 9, 12 до остановки <br>«Магазин Речицкий»<br>
+<small>Bus:</small> routes 9, 20, 22, School stop<br>
+<small>Trolleybus:</small> route 37, Adamkovskaya stop<br>
 </p>
 </div>
 </div>
@@ -47,10 +44,10 @@
 <style>.yandex-legend {display:block; margin-top:10px;} .yandex-legend li {float:left; padding-right:30px;}</style>
 <small>
 <ol class="yandex-legend">
-<li>ООО «ТелеСпутник»
-<li>Универсам «Речицкий»
-<li>Белпочта
-<li>Речицкий ГСКБ
+<li>TeleSputnik Ltd.
+<li>"Rechitsky" store
+<li>Post Office
+<li>"Rechitsky" office builing
 </ol>
 </small>
 </div>
