@@ -70,33 +70,6 @@ class DbConnection
     $result = $this->execute($sql);
     unset($result);
   }
-  
-  /*public function begin()
-  {
-    echo 'begin->';
-    $result = $this->execute("SET autocommit = 0");
-    unset($result);
-    $result = $this->execute("BEGIN");
-    unset($result);
-  }
-  
-  public function commit()
-  {
-    echo 'commit;';
-    $result = $this->execute("COMMIT");
-    unset($result);
-    $result = $this->execute("SET autocommit = 1");
-    unset($result);
-  }
-  
-  public function rollback()
-  {
-    echo 'rollback;';
-    $result = $this->execute("ROLLBACK");
-    unset($result);
-    $result = $this->execute("SET autocommit = 1");
-    unset($result);
-  }*/
 }
 
 ?>

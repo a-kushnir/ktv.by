@@ -66,12 +66,8 @@ function import_table($table, $columns, $rows) {
     $attributes = array();
     for($i = 0; $i < $column_count; $i++)
       $attributes[$columns[$i]] = $row[$i];
-    
-    /*if ($factory->record_exists($table, $attributes['id'])) {
-      $factory->update($table, $attributes['id'], $attributes);
-    } else {*/
-      $factory->create($table, $attributes);
-    //}
+
+    $factory->create($table, $attributes);
   }
 }
 ?>

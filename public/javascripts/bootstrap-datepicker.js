@@ -88,14 +88,10 @@
 				jQuery(document).off('mousedown', this.hide);
 			}
 			this.setValue();
-			/*this.element.trigger({
-				type: 'hide',
-				date: this.date
-			});*/
 		},
 		
 		setValue: function() {
-      if (this.was_selected) { // Andrew Kushnir
+      if (this.was_selected) {
         var formated = DPGlobal.formatDate(this.date, this.format);
         if (!this.isInput) {
           if (this.component){
