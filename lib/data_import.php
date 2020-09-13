@@ -12,13 +12,13 @@ function import_data() {
   );
 
   if (!isset($_POST['auth'])) {
-	echo 'ERROR: No auth header';
-	
+  echo 'ERROR: No auth header';
+  
   } else if (!try_auth($_POST['auth'])){
-	echo 'ERROR: Auth failed';
+  echo 'ERROR: Auth failed';
   
   } else if (isset($_POST['data'])) {
-	
+  
     $data = $_POST['data'];
     $data = gzuncompress($data);
     $data = explode("\n", $data);
@@ -49,10 +49,10 @@ function import_data() {
 
 function try_auth($auth)
 {
-	$values = explode(':', $auth);
-	$login = $values[0];
-	$password = $values[1];
-	return (abs(time() - $login) <= DS_TIMEOUT) && $password == md5($login.DS_SECRET);
+  $values = explode(':', $auth);
+  $login = $values[0];
+  $password = $values[1];
+  return (abs(time() - $login) <= DS_TIMEOUT) && $password == md5($login.DS_SECRET);
 }
 
 function import_table($table, $columns, $rows) {

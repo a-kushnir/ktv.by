@@ -381,9 +381,9 @@ function house_address_field($object, $label, $options = null) {
   } else {
     $required = get_object_value($options, 'required');
   
-	if (!$_SESSION['selected_city_id']) $cities = Address::get_cities();
+  if (!$_SESSION['selected_city_id']) $cities = Address::get_cities();
     $city_id = get_object_value($object, 'city_id');
-	if ($city_id == null && $_SESSION['selected_city_id']) $city_id = $_SESSION['selected_city_id'];
+  if ($city_id == null && $_SESSION['selected_city_id']) $city_id = $_SESSION['selected_city_id'];
     $streets = Address::get_streets($city_id, true);
     $street_id = get_object_value($object, 'street_id');
     $house = get_object_value($object, 'house', "");
@@ -395,10 +395,10 @@ function house_address_field($object, $label, $options = null) {
     
     $html = "<div class='control-group address".($error != null ? ' error' : null)."'><label for='city_id' class='control-label'>".($required ? required_tag() : '').$label."</label><div class='controls'>";
 
-	if ($_SESSION['selected_city_id'])
-	    $html.= "<span>".Address::city_name($city_id)."</span><input name='city_id' type='hidden' value='".$city_id."'/>&nbsp;&nbsp;";
-	else
-		$html.= select_tag('city_id', options_for_select($cities, 'id', 'name', $city_id, $include_blank), array('class' => 'span2'))."&nbsp;";
+  if ($_SESSION['selected_city_id'])
+      $html.= "<span>".Address::city_name($city_id)."</span><input name='city_id' type='hidden' value='".$city_id."'/>&nbsp;&nbsp;";
+  else
+    $html.= select_tag('city_id', options_for_select($cities, 'id', 'name', $city_id, $include_blank), array('class' => 'span2'))."&nbsp;";
 
     $html.= "<span id='street_id_container'>";
     if ($city_id != null) {
@@ -425,9 +425,9 @@ function subscriber_address_field($object, $label) {
     return readonly_field($label, format_address($object));
   } else {
 
-	if (!$_SESSION['selected_city_id']) $cities = Address::get_cities();
+  if (!$_SESSION['selected_city_id']) $cities = Address::get_cities();
     $city_id = get_object_value($object, 'city_id');
-	if ($city_id == null && $_SESSION['selected_city_id']) $city_id = $_SESSION['selected_city_id'];
+  if ($city_id == null && $_SESSION['selected_city_id']) $city_id = $_SESSION['selected_city_id'];
     $streets = Address::get_streets($city_id);
     $street_id = get_object_value($object, 'street_id');
     $houses = Address::get_houses($street_id);
@@ -440,10 +440,10 @@ function subscriber_address_field($object, $label) {
     
     $html = "<div class='control-group address".($error != null ? ' error' : null)."'><label for='city_id' class='control-label'>".required_tag().$label."</label><div class='controls'>";
 
-	if ($_SESSION['selected_city_id'])
-	    $html.= "<span>".Address::city_name($city_id)."</span><input name='city_id' type='hidden' value='".$city_id."'/>&nbsp;&nbsp;";
-	else
-		$html.= select_tag('city_id', options_for_select($cities, 'id', 'name', $city_id, $include_blank), array('class' => 'span2'))."&nbsp;";
+  if ($_SESSION['selected_city_id'])
+      $html.= "<span>".Address::city_name($city_id)."</span><input name='city_id' type='hidden' value='".$city_id."'/>&nbsp;&nbsp;";
+  else
+    $html.= select_tag('city_id', options_for_select($cities, 'id', 'name', $city_id, $include_blank), array('class' => 'span2'))."&nbsp;";
 
     $html.= "<span id='street_id_container'>";
     if ($city_id != null) {

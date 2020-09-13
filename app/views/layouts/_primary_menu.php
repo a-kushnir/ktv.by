@@ -1,7 +1,7 @@
 <?php 
 function render_primary_menu_item($link, $text) {
-	$selected_class = ends_with($_SERVER["PHP_SELF"], $link.'.php') ? 'active' : '';
-	return '<li class="'.$selected_class.'"><a href="'.$link.'">'.$text.'</a>';
+  $selected_class = ends_with($_SERVER["PHP_SELF"], $link.'.php') ? 'active' : '';
+  return '<li class="'.$selected_class.'"><a href="'.$link.'">'.$text.'</a>';
 }
 ?>
 
@@ -21,9 +21,9 @@ function render_primary_menu_item($link, $text) {
   echo render_primary_menu_item('/home', $_SESSION['user_name']);
   //echo render_primary_menu_item('/profile', $_SESSION['user_name']);
   //echo render_primary_menu_item('/help', 'Помощь');
-	echo render_primary_menu_item('/logout', 'Выход');
+  echo render_primary_menu_item('/logout', 'Выход');
 } else {
-	echo render_primary_menu_item('/logon', 'Личный кабинет');
+  echo render_primary_menu_item('/logon', 'Личный кабинет');
 } ?>
 </ul>
 

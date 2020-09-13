@@ -7,8 +7,8 @@ function action_index()
   $title = 'Профиль';
   $subtitle = null;
 
-	global $factory;
-	global $user;
+  global $factory;
+  global $user;
   
   $user = new User();
 }
@@ -19,11 +19,11 @@ function action_create()
   $title = 'Профиль';
   $subtitle = null;
 
-	global $factory;
-	global $user;
+  global $factory;
+  global $user;
   $user_id = $_SESSION['user_id'];
 
-	if ($_POST) {
+  if ($_POST) {
     $user = new User();
     
     if (get_field_value('old_password') == '') $user->errors['old_password'] = ERROR_BLANK;
@@ -39,7 +39,7 @@ function action_create()
       flash_notice('Профиль был обновлен');
     }
     
-	} else {
+  } else {
     $user = new User();
   }
 }

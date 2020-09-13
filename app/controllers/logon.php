@@ -8,7 +8,7 @@ function action_index()
   $title = "Вход в личный кабинет";
   $subtitle = null;
 
-	global $factory;
+  global $factory;
   
   unset($_SESSION['user_id']);
   unset($_SESSION['subscriber_id']);
@@ -16,7 +16,7 @@ function action_index()
   unset($_SESSION['user_session_id']);
   unset($_SESSION['ip_address']);
   
-	session_destroy();
+  session_destroy();
 }
 
 function action_create()

@@ -7,15 +7,15 @@ class DbConnection
   public function __construct()
   {
     $this->link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-	$this->available = !$this->link->connect_errno;
+  $this->available = !$this->link->connect_errno;
 
     // UTF-8
-	if ($this->available) {
+  if ($this->available) {
       $this->link->query("SET NAMES utf8");
       $this->link->query("set character_set_client='utf8'");
       $this->link->query("set character_set_results='utf8'");
       $this->link->query("set collation_connection='utf8_general_ci'");
-	}
+  }
   }
   
   public function execute($sql)
@@ -62,7 +62,7 @@ class DbConnection
       return $default_value;
     } else {
       return $result->fetch_assoc();
-	}
+  }
   }
   
   public function execute_void($sql)

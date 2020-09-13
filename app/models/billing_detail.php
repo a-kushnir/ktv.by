@@ -2,8 +2,8 @@
 class BillingDetail extends BaseModel {
   var $table_name = 'billing_details';
   
-	static function load($billing_account_id)
-	{
+  static function load($billing_account_id)
+  {
     global $factory;
     
     $query = "SELECT bd.*, ba.subscriber_id, ba.lookup_code, bt.name billing_tariff, bdt.name billing_detail_type
@@ -21,7 +21,7 @@ class BillingDetail extends BaseModel {
     unset($rows);
     
     return $result;
-	}
+  }
 }
 
 ?>

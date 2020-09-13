@@ -41,9 +41,9 @@ if (isset($_SESSION['user_session_id'])) {
 }
 
 if(!isset($suppress_authorization) || !$suppress_authorization){
-	if (!isset($_SESSION['user_id'])){
-		redirect_to('/logon');
-	}
+  if (!isset($_SESSION['user_id'])){
+    redirect_to('/logon');
+  }
 }
 
 if (isset($_SESSION['ip_address']) && $_SESSION['ip_address'] != $_SERVER['REMOTE_ADDR']) {
@@ -103,7 +103,7 @@ action_destroy();
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 call_user_func('action_'.$action);
-	
+  
 }
 $action_time = microtime(true) - $action_started_at;
 

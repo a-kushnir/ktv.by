@@ -24,7 +24,7 @@
 
 <table class="table table-bordered table-striped table-condensed">
   <thead>
-	<th>Тип операции</th>
+  <th>Тип операции</th>
   <th class="align-right">Сумма</th>
   </thead>
   <tbody>
@@ -32,10 +32,10 @@
 $amount = 0;
 foreach($groups as $group => $value) {
   $amount += $value;
-	echo '<tr>'.
-	'<td>'.$group.'</td>'.
-	'<td class="align-right">'.format_money($value).'</td>'.
-	'</tr>';
+  echo '<tr>'.
+  '<td>'.$group.'</td>'.
+  '<td class="align-right">'.format_money($value).'</td>'.
+  '</tr>';
 }
 ?>
 
@@ -66,8 +66,8 @@ foreach($groups as $group => $value) {
 
 <table class="table table-bordered table-striped table-condensed">
   <thead>
-	<th>Дата</th>
-	<th class="align-right">Расход</th>
+  <th>Дата</th>
+  <th class="align-right">Расход</th>
   <th class="align-right">Приход</th>
   <th>Операция</th>
   </thead>
@@ -80,13 +80,13 @@ foreach($billing_details as $billing_detail) {
   if($billing_detail['value'] < 0) $debet += $billing_detail['value'];
   if($billing_detail['value'] > 0) $credit += $billing_detail['value'];
 
-	echo '<tr>'.
-	'<td>'.format_date($billing_detail['actual_date']).'</td>'.
-	'<td class="align-right">'.($billing_detail['value'] < 0 ? format_money(-$billing_detail['value']) : '&nbsp;').'</td>'.
+  echo '<tr>'.
+  '<td>'.format_date($billing_detail['actual_date']).'</td>'.
+  '<td class="align-right">'.($billing_detail['value'] < 0 ? format_money(-$billing_detail['value']) : '&nbsp;').'</td>'.
   '<td class="align-right">'.($billing_detail['value'] > 0 ? format_money($billing_detail['value']) : '&nbsp;').'</td>'.
   //'<td>'.$billing_detail['billing_detail_type'].'</td>'.
   '<td>'.$billing_detail['comment'].'</td>'.
-	'</tr>';
+  '</tr>';
 }
 ?>
 
