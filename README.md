@@ -26,15 +26,15 @@
 
 [(Back to top)](#table-of-contents)
 
-xStock is a website that allows to gather and analyze stock information from multiple sources and apply the data for your own portfolio.
+ktv.by is a website that allows users to get information and subscribe to a Cable TV company
 
 ## Home Page
-News, vital market information with links to Sceeners and other important pages.
+Home page for the Cable TV company
 
 ![home-page](https://user-images.githubusercontent.com/1454297/93031202-3e04b300-f5e6-11ea-88cc-80942ce2bc34.png)
 
 ## Contact Us Page
-All gathered information about a single stock.
+Contract information, interative forms and integrated map.
 
 ![contact-us-page](https://user-images.githubusercontent.com/1454297/93031213-4c52cf00-f5e6-11ea-9bfe-26ce645fe252.png)
 
